@@ -1,40 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | {{ site.title }}</title>
-    <!-- Tailwind CSS for instant, beautiful styling -->
+    
+    <!-- Tailwind CSS (Loaded via CDN - ensure your CDN choice is GDPR compliant, or we can compile it locally later!) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* VU Amsterdam Official Colors */
-        .text-vu-blue { color: #0077b3; }
-        .bg-vu-blue { background-color: #0077b3; }
-    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    /* Using the modern system font stack for GDPR compliance and performance */
+                    fontFamily: { 
+                        sans: [
+                            'system-ui', 
+                            '-apple-system', 
+                            'BlinkMacSystemFont', 
+                            '"Segoe UI"', 
+                            'Roboto', 
+                            '"Helvetica Neue"', 
+                            'Arial', 
+                            'sans-serif'
+                        ] 
+                    },
+                    colors: { 'vu-blue': '#0077b3' }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
+<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800 font-sans selection:bg-vu-blue selection:text-white">
 
-    <!-- Navigation Bar -->
-    <nav class="bg-vu-blue text-white shadow-md">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="{{ '/' | relative_url }}" class="text-xl font-bold">VU Robotics</a>
-            <div class="space-x-4">
-                <a href="{{ '/faculty.html' | relative_url }}" class="hover:text-blue-200">Faculty</a>
-                <a href="{{ '/team.html' | relative_url }}" class="hover:text-blue-200">Team</a>
-                <a href="{{ '/projects.html' | relative_url }}" class="hover:text-blue-200">Projects</a>
-                <a href="{{ '/teaching.html' | relative_url }}" class="hover:text-blue-200">Teaching</a>
+    <!-- Glassmorphism Sticky Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="{{ '/' | relative_url }}" class="text-2xl font-extrabold text-vu-blue tracking-tight">
+                VU<span class="text-gray-800">Robotics</span>
+            </a>
+            <div class="space-x-8 font-semibold text-gray-600 hidden md:block">
+                <a href="{{ '/faculty.html' | relative_url }}" class="hover:text-vu-blue transition">Faculty</a>
+                <a href="{{ '/team.html' | relative_url }}" class="hover:text-vu-blue transition">Team</a>
+                <a href="{{ '/projects.html' | relative_url }}" class="hover:text-vu-blue transition">Projects</a>
+                <a href="{{ '/teaching.html' | relative_url }}" class="hover:text-vu-blue transition">Teaching</a>
             </div>
         </div>
     </nav>
 
     <!-- Main Content Area -->
-    <main class="flex-grow max-w-6xl mx-auto px-4 py-8 w-full">
+    <main class="flex-grow w-full">
         {{ content }}
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center py-6 mt-8">
-        <p>&copy; 2026 {{ site.title }}. Vrije Universiteit Amsterdam.</p>
+    <!-- Sleek Footer -->
+    <footer class="bg-gray-900 text-gray-400 text-center py-12 mt-12 border-t-4 border-vu-blue">
+        <p class="text-lg font-semibold text-white mb-2">Vrije Universiteit Amsterdam</p>
+        <p>&copy; 2026 Robotics Faculty. All rights reserved.</p>
     </footer>
 
 </body>
