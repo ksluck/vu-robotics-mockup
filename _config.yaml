@@ -1,0 +1,18 @@
+title: VU Amsterdam Robotics Faculty
+description: Academic research, teaching, and projects at the Vrije Universiteit Amsterdam.
+url: "" # Leave empty for now, GitHub sets this automatically
+baseurl: "" 
+
+# This tells Jekyll to process Tailwind CSS via our CDN later
+markdown: kramdown
+
+# Here we define our "Drop-in Markdown" folders!
+collections:
+  faculty:
+    output: true
+  team:
+    output: true
+  projects:
+    output: true
+  courses:
+    output: true
