@@ -1,7 +1,7 @@
 title: VU Amsterdam Robotics Faculty
 description: Academic research, teaching, and projects at the Vrije Universiteit Amsterdam.
 url: "" # Leave empty for now, GitHub sets this automatically
-baseurl: "https://kevin-luck.com/vu-robotics-mockup/" 
+baseurl: "/vu-robotics-mockup/" 
 
 # This tells Jekyll to process Tailwind CSS via our CDN later
 markdown: kramdown
