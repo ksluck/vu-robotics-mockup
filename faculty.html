@@ -1,0 +1,39 @@
+---
+layout: default
+title: Faculty
+---
+
+<div class="mb-8">
+    <h1 class="text-4xl font-bold text-vu-blue mb-2">Our Faculty</h1>
+    <p class="text-gray-600 text-lg">Meet the principal investigators driving robotics research at the VU Amsterdam.</p>
+</div>
+
+<!-- Tailwind Grid: 1 column on mobile, 2 on tablets, 3 on desktops -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    
+    {% for person in site.faculty %}
+    <div class="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden flex flex-col">
+        <div class="p-6 flex-grow">
+            <!-- Pulling data from the Markdown Front Matter -->
+            <h2 class="text-xl font-bold text-gray-800 mb-1">{{ person.title }}</h2>
+            <p class="text-vu-blue font-semibold text-sm mb-4">{{ person.role }}</p>
+            
+            <div class="mb-4 text-sm text-gray-700">
+                <span class="font-bold">Focus:</span> {{ person.research_topics }}
+            </div>
+
+            <!-- Pulling the main bio text from the Markdown file -->
+            <div class="text-gray-600 text-sm mb-4">
+                {{ person.content | markdownify | strip_html | truncatewords: 25 }}
+            </div>
+        </div>
+        
+        <div class="bg-gray-50 px-6 py-3 border-t border-gray-100 mt-auto">
+            <a href="mailto:{{ person.email }}" class="text-vu-blue hover:text-blue-800 text-sm font-semibold">
+                &rarr; Contact {{ person.title | split: " " | last }}
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
