@@ -1,0 +1,117 @@
+---
+layout: default
+title: Teaching
+---
+
+<div class="mb-10">
+    <h1 class="text-4xl font-bold text-vu-blue mb-2">Education</h1>
+    <p class="text-gray-600 text-lg">Shaping the next generation of robotics engineers and AI researchers at VU Amsterdam.</p>
+</div>
+
+<!-- BACHELOR'S COURSES SECTION -->
+<h2 class="text-2xl font-bold text-gray-800 border-b-2 border-vu-blue pb-2 mb-6">Bachelor's Program</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+    
+    <!-- Filter for Bachelor courses -->
+    {% assign bsc_courses = site.courses | where: "level", "bachelor" %}
+    {% for course in bsc_courses %}
+    <div class="bg-white rounded-lg shadow border border-gray-200 overflow-hidden flex flex-col sm:flex-row">
+        
+        <!-- Course Image -->
+        {% if course.image %}
+        <div class="sm:w-1/3 h-48 sm:h-auto flex-shrink-0">
+            <img src="{{ course.image }}" alt="{{ course.title }}" class="w-full h-full object-cover">
+        </div>
+        {% endif %}
+
+        <!-- Course Details -->
+        <div class="p-5 flex-grow flex flex-col">
+            <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-gray-800">{{ course.title }}</h3>
+                
+                <!-- Active/Inactive Badge -->
+                {% if course.active %}
+                    <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-semibold uppercase tracking-wide">Active</span>
+                {% else %}
+                    <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-semibold uppercase tracking-wide">Inactive</span>
+                {% endif %}
+            </div>
+
+            <div class="text-sm text-gray-600 mb-3 space-y-1">
+                <p><strong>Semester:</strong> {{ course.semester }}</p>
+                <p><strong>Lecturer(s):</strong> 
+                    <!-- Loop through the array of lecturers -->
+                    {% for lecturer in course.lecturers %}
+                        {{ lecturer }}{% unless forloop.last %}, {% endunless %}
+                    {% endfor %}
+                </p>
+            </div>
+
+            <!-- Abstract -->
+            <div class="text-gray-700 text-sm mb-4 flex-grow line-clamp-3">
+                {{ course.content | markdownify | strip_html }}
+            </div>
+
+            <!-- Study Guide Link -->
+            {% if course.study_guide_url %}
+            <div class="mt-auto pt-3 border-t border-gray-100">
+                <a href="{{ course.study_guide_url }}" target="_blank" class="text-vu-blue hover:text-blue-800 text-sm font-semibold flex items-center">
+                    View in Study Guide &rarr;
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- MASTER'S COURSES SECTION -->
+<h2 class="text-2xl font-bold text-gray-800 border-b-2 border-vu-blue pb-2 mb-6">Master's Program</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    
+    <!-- Filter for Master courses -->
+    {% assign msc_courses = site.courses | where: "level", "master" %}
+    {% for course in msc_courses %}
+    <div class="bg-white rounded-lg shadow border border-gray-200 overflow-hidden flex flex-col sm:flex-row">
+        
+        {% if course.image %}
+        <div class="sm:w-1/3 h-48 sm:h-auto flex-shrink-0">
+            <img src="{{ course.image }}" alt="{{ course.title }}" class="w-full h-full object-cover">
+        </div>
+        {% endif %}
+
+        <div class="p-5 flex-grow flex flex-col">
+            <div class="flex justify-between items-start mb-2">
+                <h3 class="text-xl font-bold text-gray-800">{{ course.title }}</h3>
+                
+                {% if course.active %}
+                    <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-semibold uppercase tracking-wide">Active</span>
+                {% else %}
+                    <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-semibold uppercase tracking-wide">Inactive</span>
+                {% endif %}
+            </div>
+
+            <div class="text-sm text-gray-600 mb-3 space-y-1">
+                <p><strong>Semester:</strong> {{ course.semester }}</p>
+                <p><strong>Lecturer(s):</strong> 
+                    {% for lecturer in course.lecturers %}
+                        {{ lecturer }}{% unless forloop.last %}, {% endunless %}
+                    {% endfor %}
+                </p>
+            </div>
+
+            <div class="text-gray-700 text-sm mb-4 flex-grow line-clamp-3">
+                {{ course.content | markdownify | strip_html }}
+            </div>
+
+            {% if course.study_guide_url %}
+            <div class="mt-auto pt-3 border-t border-gray-100">
+                <a href="{{ course.study_guide_url }}" target="_blank" class="text-vu-blue hover:text-blue-800 text-sm font-semibold flex items-center">
+                    View in Study Guide &rarr;
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
