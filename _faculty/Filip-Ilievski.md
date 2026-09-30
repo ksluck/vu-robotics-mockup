@@ -4,7 +4,7 @@ last_name: Ilievski # This ensures she is sorted under 'V'
 role: Assistant Professor
 image: assets/images/faculty/filip.jpg
 keywords:
-  - Vuman-Centric AI
+  - Human-Centric AI
   - Common Sense AI
 personal_website: "https://www.ilievski.info/"
 pure_profile: "https://research.vu.nl/en/persons/filip-ilievski/"
