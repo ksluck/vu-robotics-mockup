@@ -1,6 +1,6 @@
 ---
 title: Swarm Robotics
-image: assets/images/mockup.jpg
+image: assets/images/swarm_robotics.jpg
 lecturers:
   - Dr. Yara Khaluf
 ---

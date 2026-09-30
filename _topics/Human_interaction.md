@@ -1,6 +1,6 @@
 ---
 title: Human Robot Interaction
-image: assets/images/mockup.jpg
+image: assets/images/human_interactive.jpg
 lecturers:
   - Dr. Kim Baraka
 ---
