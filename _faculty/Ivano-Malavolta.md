@@ -1,8 +1,8 @@
 ---
-title: Dr. Kim Baraka
-last_name: Baraka # This ensures she is sorted under 'V'
+title: Dr. Ivano Malavolta
+last_name: Malavolta # This ensures she is sorted under 'V'
 role: Associate Professor
-image: assets/images/faculty/ivano.jpeg
+image: assets/images/faculty/ivano.jpg
 keywords:
   - Software Engineering
   - Robotics
