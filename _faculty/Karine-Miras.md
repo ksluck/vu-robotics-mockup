@@ -2,7 +2,7 @@
 title: Dr. Karine Miras
 last_name: Miras # This ensures she is sorted under 'V'
 role: Assistant Professor
-image: assets/images/faculty/karine.png
+image: assets/images/faculty/karine.jpg
 keywords:
   - Artificial Life
   - Evolutionary Robotics
