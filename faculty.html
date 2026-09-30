@@ -3,37 +3,74 @@ layout: default
 title: Faculty
 ---
 
-<div class="mb-8">
-    <h1 class="text-4xl font-bold text-vu-blue mb-2">Our Faculty</h1>
-    <p class="text-gray-600 text-lg">Meet the principal investigators driving robotics research at the VU Amsterdam.</p>
-</div>
-
-<!-- Tailwind Grid: 1 column on mobile, 2 on tablets, 3 on desktops -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    
-    {% for person in site.faculty %}
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden flex flex-col">
-        <div class="p-6 flex-grow">
-            <!-- Pulling data from the Markdown Front Matter -->
-            <h2 class="text-xl font-bold text-gray-800 mb-1">{{ person.title }}</h2>
-            <p class="text-vu-blue font-semibold text-sm mb-4">{{ person.role }}</p>
-            
-            <div class="mb-4 text-sm text-gray-700">
-                <span class="font-bold">Focus:</span> {{ person.research_topics }}
-            </div>
-
-            <!-- Pulling the main bio text from the Markdown file -->
-            <div class="text-gray-600 text-sm mb-4">
-                {{ person.content | markdownify | strip_html | truncatewords: 25 }}
-            </div>
-        </div>
-        
-        <div class="bg-gray-50 px-6 py-3 border-t border-gray-100 mt-auto">
-            <a href="mailto:{{ person.email }}" class="text-vu-blue hover:text-blue-800 text-sm font-semibold">
-                &rarr; Contact {{ person.title | split: " " | last }}
-            </a>
-        </div>
+<div class="max-w-7xl mx-auto px-4 py-16">
+    <!-- Page Header -->
+    <div class="text-center mb-16">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Our Faculty</h1>
+        <div class="w-24 h-1 bg-vu-blue mx-auto rounded-full mb-6"></div>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto">Meet the principal investigators and professors driving robotics research at the VU Amsterdam.</p>
     </div>
-    {% endfor %}
 
+    <!-- Faculty Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        
+        <!-- Sort faculty alphabetically by the 'last_name' variable -->
+        {% assign sorted_faculty = site.faculty | sort: 'last_name' %}
+        {% for person in sorted_faculty %}
+        
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col hover:shadow-2xl transition-shadow duration-300">
+            
+            <!-- Profile Image -->
+            {% if person.image %}
+            <!-- Note: object-top ensures faces aren't chopped off if the image is tall -->
+            <div class="w-full h-72 relative flex-shrink-0 bg-gray-100">
+                <img src="{{ person.image }}" alt="{{ person.title }}" class="absolute inset-0 w-full h-full object-cover object-top">
+            </div>
+            {% endif %}
+
+            <div class="p-8 flex flex-col flex-grow">
+                
+                <!-- Name & Role -->
+                <h2 class="text-2xl font-bold text-gray-900 mb-1">{{ person.title }}</h2>
+                <p class="text-vu-blue font-bold text-sm tracking-wide uppercase mb-4">{{ person.role }}</p>
+                
+                <!-- Research Keywords (Dynamic Pill Badges) -->
+                {% if person.keywords %}
+                <div class="flex flex-wrap gap-2 mb-5">
+                    {% for keyword in person.keywords %}
+                    <span class="bg-blue-50 text-vu-blue text-xs font-semibold px-3 py-1 rounded-full border border-blue-100">
+                        {{ keyword }}
+                    </span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <!-- Short Abstract (Clamped to 4 lines to keep cards uniform) -->
+                <div class="text-gray-600 text-sm mb-8 flex-grow line-clamp-4">
+                    {{ person.content | markdownify | strip_html }}
+                </div>
+                
+                <!-- Footer Action Buttons -->
+                <div class="border-t border-gray-100 pt-5 mt-auto flex space-x-3">
+                    
+                    {% if person.personal_website %}
+                    <a href="{{ person.personal_website }}" target="_blank" class="flex-1 text-center bg-gray-50 hover:bg-gray-100 text-gray-700 font-semibold py-2.5 rounded-xl text-sm transition-colors border border-gray-200 shadow-sm flex items-center justify-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                        Website
+                    </a>
+                    {% endif %}
+                    
+                    {% if person.pure_profile %}
+                    <a href="{{ person.pure_profile }}" target="_blank" class="flex-1 text-center bg-vu-blue hover:bg-blue-700 text-white font-semibold py-2.5 rounded-xl text-sm transition-colors shadow-md flex items-center justify-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        PURE
+                    </a>
+                    {% endif %}
+                    
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
 </div>
