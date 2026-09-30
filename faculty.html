@@ -46,16 +46,11 @@ title: Faculty
                 {% endif %}
 
                 <!-- Short Abstract (Clamped to 4 lines to keep cards uniform) -->
-                 <div class="flex-grow mb-8 flex flex-col">
-                    <div class="text-gray-600 text-sm mb-8 flex-grow line-clamp-4">
-                        {{ person.content | markdownify | strip_html }}
-                    </div>
                     <div class="flex-grow mb-8 flex flex-col">
                         <div class="text-gray-600 text-sm transition-all duration-300 line-clamp-4">
                             {{ person.content | markdownify | strip_html }}
                         <button onclick="toggleDescription(this)" class="text-vu-blue text-xs font-bold mt-2 self-start hover:underline focus:outline-none uppercase tracking-wide">Read more</button>
                     </div>
-                </div>
                 
                 <!-- Footer Action Buttons -->
                 <div class="border-t border-gray-100 pt-5 mt-auto flex space-x-3">
