@@ -74,19 +74,19 @@ title: Home
     </div>
 </div>
 
-<!-- RESEARCH TOPICS GRID (Dynamic 2-Column) -->
+<!-- RESEARCH TOPICS GRID (Dynamic 2-Column with Random Shuffle) -->
 <div class="max-w-7xl mx-auto px-4 py-16">
     <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Research Focus Areas</h2>
         <div class="w-24 h-1 bg-vu-blue mx-auto rounded-full"></div>
     </div>
 
-    <!-- The Grid Container: 1 column on mobile, 2 columns on desktop -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <!-- The Grid Container (Added ID for JavaScript) -->
+    <div id="topics-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
         {% for topic in site.topics %}
-        <!-- The Card (Vertical stack so it fits beautifully in a grid) -->
-        <div class="flex flex-col bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+        <!-- The Card -->
+        <div class="topic-card flex flex-col bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300">
             
             <!-- Top Image -->
             <div class="w-full h-64 relative flex-shrink-0">
@@ -118,6 +118,26 @@ title: Home
 
     </div>
 </div>
+
+<!-- JavaScript to randomize the grid order on every page load -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const grid = document.getElementById('topics-grid');
+        if (grid) {
+            // Get all the cards into an array
+            const cards = Array.from(grid.children);
+            
+            // Shuffle the array using the Fisher-Yates algorithm
+            for (let i = cards.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [cards[i], cards[j]] = [cards[j], cards[i]];
+            }
+            
+            // Put the shuffled cards back into the grid
+            cards.forEach(card => grid.appendChild(card));
+        }
+    });
+</script>
 
 <!-- 3. FEATURED HIGHLIGHTS (With hover animations) -->
 <div class="max-w-7xl mx-auto px-4 py-24">
