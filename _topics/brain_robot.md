@@ -1,6 +1,6 @@
 ---
 title: Brain-Robot Interfacing
-image: assets/images/mockup.jpg
+image: assets/images/brain_interface.jpg
 lecturers:
   - Dr. Maryam Alimardani
 ---

@@ -1,6 +1,6 @@
 ---
 title: Evolutionary Robotics
-image: assets/images/mockup.jpg
+image: assets/images/evolutionary_robotics.jpg
 lecturers:
   - Dr. Karine Miras
   - Prof. Dr. Guszti Eiben
