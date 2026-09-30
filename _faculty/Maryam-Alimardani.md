@@ -2,7 +2,7 @@
 title: Dr. Maryam Alimardani
 last_name: Alimardani # This ensures she is sorted under 'V'
 role: Associate Professor
-image: assets/images/faculty/maryam.jpeg
+image: assets/images/faculty/maryam.jpg
 keywords:
   - Brain-Computer Interfaces
   - Brain-Robot Interfacing
