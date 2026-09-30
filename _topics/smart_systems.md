@@ -1,6 +1,6 @@
 ---
 title: Smart Systems engineering
-image: assets/images/mockup.jpg
+image: assets/images/systems_id.jpg
 lecturers:
   - Dr. Natalia Silvis-Cividjian
   - Erik Link

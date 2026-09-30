@@ -1,6 +1,6 @@
 ---
 title: Robot Learning
-image: assets/images/mockup.jpg
+image: assets/images/robot_learning.jpg
 lecturers:
   - Dr. Kevin Sebastian Luck
 ---
