@@ -1,6 +1,6 @@
 ---
 title: Energy-Efficient Robotics Software
-image: assets/images/mockup.jpg
+image: assets/images/se_robotics.jpeg
 lecturers:
   - Dr. Ivano Malavolta
 ---

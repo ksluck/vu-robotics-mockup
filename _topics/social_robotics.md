@@ -1,6 +1,6 @@
 ---
 title: Social Robotics
-image: assets/images/spcoal_robotics.jpg
+image: assets/images/social_robotics.jpg
 lecturers:
   - Dr. Mike Ligthart
   - Prof. Koen Hindriks
