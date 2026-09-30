@@ -16,3 +16,5 @@ collections:
     output: true
   news:
     output: true
+  topics:
+    output: true
