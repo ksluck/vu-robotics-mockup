@@ -1,6 +1,6 @@
 ---
 title: Robot Learning
-image: "https://images.unsplash.com/photo-1620825937374-87fc7d6aaf8e?auto=format&fit=crop&w=800&q=80"
+image: _assets/images/mockup.jpg
 lecturers:
   - Prof. Dr. Elara de Vries
   - Dr. Jan Jansen
