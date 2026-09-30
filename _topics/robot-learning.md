@@ -2,8 +2,7 @@
 title: Robot Learning
 image: assets/images/mockup.jpg
 lecturers:
-  - Prof. Dr. Elara de Vries
-  - Dr. Jan Jansen
+  - Dr. Kevin Sebastian Luck
 ---
 
-Combining Machine Learning and Robotics is one of the primary focus areas at the VU. Here we investigate the use of state-of-the-art deep neural networks, Foundation models, World Models and other machine learning approaches in the context of robot control, perception, and planning.
+Robot Learning sits at the intersection of modern machine learning and embodied intelligence, empowering physical systems to autonomously acquire complex behaviors from experience. At VU Amsterdam, this research investigates how state-of-the-art deep neural networks, foundation models, and world models can be integrated into robot control, multimodal perception, and task planning—enabling robots to build predictive representations of their surroundings, generalize across novel environments, and execute robust, safe actions in real-world scenarios.
