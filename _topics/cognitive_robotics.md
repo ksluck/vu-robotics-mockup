@@ -1,6 +1,6 @@
 ---
 title: Cognitive Robotics
-image: assets/images/mockup.jpg
+image: assets/images/cognitive_robotics.jpg
 lecturers:
   - Dr. Ilaria Tiddi
 ---
