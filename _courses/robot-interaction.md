@@ -1,7 +1,7 @@
 ---
 title: Robot Interaction
 level: bachelor
-image: assets/images/mockup.png
+image: 
 lecturers: 
   - Peggy van Minkelen
   - Dr. Mike Ligthart

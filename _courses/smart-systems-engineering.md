@@ -1,7 +1,7 @@
 ---
 title: Smart Systems Engineering
 level: bachelor
-image: assets/images/mockup.png
+image: 
 lecturers: 
   - Dr. Natalia Silvis-Cividjian
 semester: Period 2

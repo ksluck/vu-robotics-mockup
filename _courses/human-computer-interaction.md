@@ -1,7 +1,7 @@
 ---
 title: Human-Computer Interaction for AI
 level: bachelor
-image: assets/images/mockup.png
+image: 
 lecturers: 
   - Dr. Maryam Alimardani
 semester: Period 5

@@ -1,7 +1,7 @@
 ---
 title: Introduction to Robotics
 level: bachelor
-image: assets/images/mockup.png
+image: 
 lecturers: 
   - Dr. Kevin Sebastian Luck
   - Dr. Kim Baraka
