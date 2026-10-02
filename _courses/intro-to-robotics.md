@@ -1,13 +1,13 @@
 ---
 title: Introduction to Robotics
 level: bachelor
-image: "https://images.unsplash.com/photo-1546776310-eef45dd6d63cb?auto=format&fit=crop&w=600&q=80"
+image: assets/mockup.png
 lecturers: 
-  - Prof. Dr. Elara de Vries
-  - Mark van der Berg
-semester: Fall 2026
+  - Dr. Kevin Sebastian Luck
+  - Dr. Kim Baraka
+semester: Period 1
 active: true
-study_guide_url: "https://studiegids.vu.nl/en"
+study_guide_url: "https://research.vu.nl/en/courses/robotics-3/"
 ---
 
-This course provides a foundational overview of robotic kinematics, dynamics, and basic control systems. Students will gain hands-on experience using basic ROS setups and simulated robotic arms to understand how physical mechanisms interact with digital commands.
+The first half of the course will cover the basics of robotics and robot control. Topics will include forward/inverse kinematics, modeling of robots, Denavit-Hartenberg, the basics of dynamics, trajectory planning and optimization and control algorithms. In the second half, the course will give an introduction into robot learning and embodied AI, i.e., the combination of artificial intelligence & machine learning with robotics. This will include the discussion of model-free and model-learning approaches for robotic tasks, their disadvantages and advantages over control methods.
