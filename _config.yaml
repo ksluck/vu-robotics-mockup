@@ -1,7 +1,7 @@
 title: VU Amsterdam Robotics Faculty
 description: Academic research, teaching, and projects at the Vrije Universiteit Amsterdam.
-url: "https://yourusername.github.io" 
-baseurl: "/vu-robotics-mockup" 
+url: "http://vu-robotics.nl" 
+baseurl: "/" 
 
 markdown: kramdown
 
