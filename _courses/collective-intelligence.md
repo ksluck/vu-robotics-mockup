@@ -1,7 +1,7 @@
 ---
 title: Project Collective Intelligence
 level: bachelor
-image: assets/mockup.png
+image: assets/images/mockup.png
 lecturers: 
   - Dr. Yara Khaluf
 semester: Period 6
