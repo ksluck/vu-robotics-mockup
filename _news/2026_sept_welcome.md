@@ -1,5 +1,5 @@
 ---
-title: Best Paper Award at IROS 2026
+title: Welcome to the new Master AI Students!
 date: 2026-08-01
 image: assets/images/news/welcome_2.jpeg
 ---
