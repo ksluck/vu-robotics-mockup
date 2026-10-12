@@ -1,6 +1,6 @@
 ---
 title: Autonomous Systems Engineering
-image: assets/images/natalia_systems.jpg
+image: assets/images/natalia_systems.jpeg
 lecturers:
   - Dr. Natalia Silvis-Cividjian
 ---
