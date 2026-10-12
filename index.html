@@ -56,7 +56,7 @@ title: Home
         {% for item in sorted_news %}
         
         <!-- Each Slide -->
-        <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 ease-in-out {% if forloop.first %}opacity-100 z-10{% else %}opacity-0 z-0{% endif %}">
+        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out {% if forloop.first %}opacity-100 z-10{% else %}opacity-0 z-0{% endif %}">
             
             <!-- Background Image (Cropped perfectly with object-cover) -->
             <img src="{{ item.image }}" alt="{{ item.title }}" class="absolute inset-0 w-full h-full object-cover">
