@@ -43,6 +43,14 @@ title: Home
     <!-- The Carousel Container -->
     <div class="relative w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl bg-gray-900" id="news-carousel">
         
+        <!-- Left/Right Navigation Buttons -->
+        <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-black/80 text-white w-12 h-12 flex items-center justify-center rounded-full focus:outline-none transition-colors cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+        </button>
+        <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-black/50 hover:bg-black/80 text-white w-12 h-12 flex items-center justify-center rounded-full focus:outline-none transition-colors cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+        </button>
+
         <!-- Jekyll Loop: Sort news by date (newest first) -->
         {% assign sorted_news = site.news | sort: 'date' | reverse %}
         {% for item in sorted_news %}
@@ -54,10 +62,10 @@ title: Home
             <img src="{{ item.image }}" alt="{{ item.title }}" class="absolute inset-0 w-full h-full object-cover">
             
             <!-- Dark Gradient Overlay so text is always readable -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none"></div>
             
-            <!-- Text Overlay Container -->
-            <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+            <!-- Text Overlay Container (Wrapped in a link to the news item) -->
+            <a href="{{ item.url }}" class="absolute bottom-0 left-0 p-8 md:p-12 w-full z-20 hover:opacity-90 transition-opacity block cursor-pointer">
                 <span class="bg-vu-blue text-white text-xs font-bold uppercase px-3 py-1 rounded-full mb-4 inline-block">
                     {{ item.date | date: "%B %d, %Y" }}
                 </span>
@@ -67,12 +75,51 @@ title: Home
                 <p class="text-gray-200 line-clamp-2 md:w-2/3 text-lg">
                     {{ item.content | strip_html }}
                 </p>
-            </div>
+            </a>
         </div>
         {% endfor %}
         
     </div>
 </div>
+
+<!-- Carousel Functionality Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const slides = document.querySelectorAll('#news-carousel .carousel-slide');
+        const btnNext = document.getElementById('carousel-next');
+        const btnPrev = document.getElementById('carousel-prev');
+        let currentIndex = 0;
+
+        if (slides.length <= 1) {
+            if (btnNext) btnNext.style.display = 'none';
+            if (btnPrev) btnPrev.style.display = 'none';
+            return;
+        }
+
+        function updateSlider(newIndex) {
+            // Hide current slide
+            slides[currentIndex].classList.remove('opacity-100', 'z-10');
+            slides[currentIndex].classList.add('opacity-0', 'z-0');
+            
+            // Set new index
+            currentIndex = newIndex;
+            if (currentIndex >= slides.length) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = slides.length - 1;
+            
+            // Show new slide
+            slides[currentIndex].classList.remove('opacity-0', 'z-0');
+            slides[currentIndex].classList.add('opacity-100', 'z-10');
+        }
+
+        btnNext.addEventListener('click', function() {
+            updateSlider(currentIndex + 1);
+        });
+
+        btnPrev.addEventListener('click', function() {
+            updateSlider(currentIndex - 1);
+        });
+    });
+</script>
 
 <!-- RESEARCH TOPICS GRID (Dynamic 2-Column with Random Shuffle) -->
 <div class="max-w-7xl mx-auto px-4 py-16">
