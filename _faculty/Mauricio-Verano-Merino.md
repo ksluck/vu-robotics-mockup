@@ -4,11 +4,11 @@ last_name: Merino  # This ensures she is sorted under 'V'
 role: Assistant Professor
 image: assets/images/faculty/mauricio.jpeg
 keywords:
-  - Software Engineering in Creative Computing
-  - Programming
+  - Software Engineering
+  - Programming environments
   - Creative coding & machines  
 personal_website: "https://maveme.github.io/"
 pure_profile: "https://research.vu.nl/en/persons/mauricio-verano-merino/"
 ---
 
-My research focuses on end-user programming, domain-specific languages, and software environments for creative computing. My work sits at the intersection of Software Engineering and Human-Computer Interaction—building interactive systems, live-coding tools, and programming abstractions that empower people (from researchers to artists and educators) to build and express ideas through code.
+My research operates at the intersection of Software Engineering (SE) and Human-Computer Interaction (HCI), focusing on end-user programming, domain-specific languages, and environments for creative computing. I design interactive systems, programming environments, and tailored programming abstractions that empower traditional and non-traditional developers to express complex ideas through code. Beyond creation, my work investigates the analysis and long-term maintenance of software-based projects, ensuring that domain-specific tools and creative codebases remain robust, readable, and sustainable over time.
